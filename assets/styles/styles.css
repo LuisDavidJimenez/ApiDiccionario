@@ -1,0 +1,187 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fuentes generales */
+body {
+  background: url('https://previews.123rf.com/images/badahos/badahos1107/badahos110700101/10025436-letters-cut-from-newspaper-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+/* Header */
+header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1.2rem;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+.contenedor-ejes {
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-ejes h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-decoration: underline;
+}
+
+.sistema-ejes .eje1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #4a90e2;
+}
+
+/* Buscador */
+.buscador {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#buscarPalabra {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  flex: 1;
+  font-size: 1rem;
+}
+
+#bnt-mostrar {
+  padding: 0.6rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#bnt-mostrar:hover {
+  background-color: #3a78c2;
+}
+
+/* Resultado */
+.resultado,
+.historial,
+.palabras,
+#significado {
+  margin-top: 1rem;
+}
+
+.palabras p {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+#significado {
+  background-color: #f0f4ff;
+  padding: 1rem;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Historial */
+.historial h3 {
+  margin-bottom: 0.5rem;
+  color: #4a90e2;
+}
+
+.lista-busquedas {
+  background-color: #f3f3f3;
+  padding: 0.6rem;
+  border-radius: 8px;
+  min-height: 2rem;
+}
+html,
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer */
+.footer {
+  margin-top: auto;
+  padding: 2rem;
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.footer h2 {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footer p {
+  margin: 0.3rem 0;
+}
+
+.derechos a {
+    text-decoration: none;
+    color: white;
+}
+
+.derechos a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .buscador {
+    flex-direction: column;
+  }
+
+  #buscarPalabra,
+  #bnt-mostrar {
+    width: 100%;
+  }
+
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}

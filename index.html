@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="estilos.css" /> -->
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <script type="module" src="./assets/js/main.js" defer></script>
+    <!-- JS -->
+    <title>Diccionario | LJA</title>
+  </head>
+
+  <body>
+    <!-- Navegación principal -->
+    <header>
+        <img src="./assets/img/logo.png" alt="Logo" height="100px">
+      <h1>Diccionario | LJA</h1>
+
+      <nav id="navbar" aria-label="Menú principal">
+        <a href="./index.html" title="about">Página principal</a>
+        <a href="#BusquedasRecientes" title="#BusquedasRecientes"
+          >Búsquedas recientes</a
+        >
+        <a href="https://dictionaryapi.dev" target="_blank"
+          >Mas sobre la Api...</a
+        >
+      </nav>
+    </header>
+
+    <main class="contenedor">
+      <section class="contenedor-ejes">
+        <h1>Diccionario</h1>
+
+        <div class="sistema-ejes">
+          <div class="eje1"><i>Definiciones</i></div>
+
+          <div class="contenido-central">
+            <section class="buscador">
+              <input
+                type="text"
+                id="buscarPalabra"
+                placeholder="Buscar término..."
+              />
+              <button id="bnt-mostrar">Buscar</button>
+            </section>
+
+            <section id="resultado" class="resultado"></section>
+
+            <section class="historial">
+              <h3>Palabras buscadas:</h3>
+              <p id="lista-busquedas" class="lista-busquedas"></p>
+            </section>
+
+            <div class="contenedor">
+              <div class="palabras">
+                <p id="palabra"></p>
+                <br />
+                <p id="tipo"></p>
+              </div>
+              <div>
+                <pre id="significado"></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <h2>Quiénes somos</h2>
+      <p>
+        Somos un equipo de lingüistas y tecnólogos apasionados por el lenguaje.
+      </p>
+      <div class="derechos">
+        <p>Gracias por usar nuestro diccionario digital.</p>
+        <p>
+          &copy; 2025 Diccionario | Developers:
+          <a href="https://github.com/srtalonso" target="_blank">Azucena</a> |
+          <a href="https://github.com/LuisDavidJimenez" target="_blank">Luis</a>
+          | <a href="https://github.com/Josephtur" target="_blank">Joseph</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
