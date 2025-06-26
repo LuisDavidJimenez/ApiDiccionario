@@ -15,7 +15,7 @@
   <body>
     <!-- Navegación principal -->
     <header>
-        <img src="./assets/img/logo.png" alt="Logo" height="100px">
+      <img src="./assets/img/logo.png" alt="Logo" height="100px" />
       <h1>Diccionario | LJA</h1>
 
       <nav id="navbar" aria-label="Menú principal">
@@ -49,13 +49,21 @@
             <section id="resultado" class="resultado"></section>
 
             <section class="historial">
+              <h3>Palabras Favoritas</h3>
+              <p id="lista-favoritos" class="lista-favoritos"></p>
+            </section>
+            <hr />
+            <section class="historial">
               <h3>Palabras buscadas:</h3>
               <p id="lista-busquedas" class="lista-busquedas"></p>
             </section>
 
             <div class="contenedor">
               <div class="palabras">
-                <p id="palabra"></p>
+                <div class="palabrafav">
+                  <p id="palabra"></p>
+                  <button style="display: none;" id="favicono">⭐</button>
+                </div>
                 <br />
                 <p id="tipo"></p>
               </div>

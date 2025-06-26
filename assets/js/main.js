@@ -34,10 +34,40 @@ function mostrarHistorial() {
   const historial = document.getElementById("lista-busquedas");
   historial.innerHTML = ""; // Limpiar
 
-  console.log(busquedasRecientes);
-
   busquedasRecientes.forEach((palabra) => {
     historial.textContent += `${palabra} \n/\n`;
+  });
+}
+
+const palabrasFav = [];
+
+const botonFavorito = document.getElementById("favicono");
+botonFavorito.addEventListener("click", favoritaPal);
+
+function favoritaPal() {
+  const palabraBuscada = document.getElementById("buscarPalabra").value.trim();
+
+  if (!palabraBuscada) {
+    return;
+  }
+
+  const index = palabrasFav.indexOf(palabraBuscada);
+  if (index !== -1) {
+    palabrasFav.splice(index, 1);
+  } else {
+    // Agrega al inicio
+    palabrasFav.unshift(palabraBuscada);
+  }
+
+  mostraPalabrasFav();
+}
+
+function mostraPalabrasFav() {
+  const palabrasFavoritas = document.getElementById("lista-favoritos");
+  palabrasFavoritas.innerHTML = ""; // Limpiar
+
+  palabrasFav.forEach((palabra) => {
+    palabrasFavoritas.textContent += `${palabra} \n/\n`;
   });
 }
 
@@ -47,14 +77,19 @@ const palabra = document.getElementById("palabra");
 const significado = document.getElementById("significado");
 
 btn.addEventListener("click", () => {
-  const postID = document.getElementById("buscarPalabra").value.trim();
+  const palabraBuscada = document.getElementById("buscarPalabra").value.trim();
 
-  if (!postID) {
+  if (!palabraBuscada) {
+    palabra.textContent = "";
+    tipo.textContent = "";
     significado.textContent = "Introduce una palabra válida";
+    botonFavorito.style.display = 'none';
     return;
   }
 
-  callAPI(`/${postID}`)
+  document.getElementById("favicono").style.display = "block";
+
+  callAPI(`/${palabraBuscada}`)
     .then((data) => {
       // Limpiar contenido anterior
       palabra.textContent = "";
@@ -94,7 +129,7 @@ btn.addEventListener("click", () => {
           significado.textContent += "\n";
         }
       });
-      guardarBusquedaEnMemoria(postID);
+      guardarBusquedaEnMemoria(palabraBuscada);
     })
     .catch((error) => {
       significado.textContent = "❌ Error: " + error.message;
